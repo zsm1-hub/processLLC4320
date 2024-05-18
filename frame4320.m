@@ -73,7 +73,6 @@ yframe=[yy(J1,I1) yy(J1,I2) yy(J2,I2) yy(J2,I1) yy(J1,I1)];
 
 load mvppos.mat
 
-
 target1=subplot(2,3,1)
 pcolor(xx,yy,temp);shading flat;colorbar;hold on;
 plot([xx(J1,I1) xx(J1,I2) xx(J2,I2) xx(J2,I1) xx(J1,I1)], [yy(J1,I1) yy(J1,I2) yy(J2,I2) yy(J2,I1) yy(J1,I1)],'k--','linewi',1.2);

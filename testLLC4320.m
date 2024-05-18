@@ -19,17 +19,18 @@ scrsize=get(0,'screensize');%% 是为了获得屏幕大小，Screensize是一个4元素向量[lef
 scrsize(3)=scrsize(3)./2; %
 set(gcf,'position',scrsize);% 用获得的screensize向量设置figure的position属性，实现最大化的目的
 
-TT=4
+TT=4;
 % tindex=120;
 
 for tindex=96:144
-lonpos1=118;latpos1=23.5;
-lonpos2=120.5;latpos2=25;
-layer=1;%1 is surface
-dot1=30;dot2=7;
-[I1,I2,J1,J2,time]=frame4320(lonpos1,lonpos2,latpos1,latpos2,TT,tindex,dot1,dot2,layer)
-saveas(gcf,['LLC4320BASIC',num2str(timecon,'%05d')],'png')
-clf
+    lonpos1=118;latpos1=23.5;
+    lonpos2=120.5;latpos2=25;
+    layer=1;%1 is surface
+    dot1=30;dot2=7;
+%     [I1,I2,J1,J2,time]=frame4320(lonpos1,lonpos2,latpos1,latpos2,TT,tindex,dot1,dot2,layer)
+    time=vertical_interpolate(lonpos1,lonpos2,latpos1,latpos2,TT,tindex);
+    saveas(gcf,['LLC4320_MVP_vertical',time],'png')
+    clf
 end
 % suptitle(['Days = ',num2str(tindot*6/24,'%2.2f')]);
         
